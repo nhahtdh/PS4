@@ -1,0 +1,458 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		73B2665114E1479400A4DC04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665014E1479400A4DC04 /* UIKit.framework */; };
+		73B2665314E1479400A4DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665214E1479400A4DC04 /* Foundation.framework */; };
+		73B2665514E1479400A4DC04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665414E1479400A4DC04 /* CoreGraphics.framework */; };
+		73B2665B14E1479400A4DC04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73B2665914E1479400A4DC04 /* InfoPlist.strings */; };
+		73B2665D14E1479400A4DC04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2665C14E1479400A4DC04 /* main.m */; };
+		73B2666114E1479400A4DC04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2666014E1479400A4DC04 /* AppDelegate.m */; };
+		73B2666414E1479400A4DC04 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B2666214E1479400A4DC04 /* MainStoryboard_iPhone.storyboard */; };
+		73B2666714E1479400A4DC04 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B2666514E1479400A4DC04 /* MainStoryboard_iPad.storyboard */; };
+		73B2666A14E1479400A4DC04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2666914E1479400A4DC04 /* ViewController.m */; };
+		73B2667214E1479400A4DC04 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2667114E1479400A4DC04 /* SenTestingKit.framework */; };
+		73B2667314E1479400A4DC04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665014E1479400A4DC04 /* UIKit.framework */; };
+		73B2667414E1479400A4DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665214E1479400A4DC04 /* Foundation.framework */; };
+		73B2667C14E1479400A4DC04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73B2667A14E1479400A4DC04 /* InfoPlist.strings */; };
+		73B2667F14E1479400A4DC04 /* FallingBricksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2667E14E1479400A4DC04 /* FallingBricksTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		73B2667514E1479400A4DC04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 73B2664314E1479400A4DC04 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73B2664B14E1479400A4DC04;
+			remoteInfo = FallingBricks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		73B2664C14E1479400A4DC04 /* FallingBricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingBricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		73B2665014E1479400A4DC04 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		73B2665214E1479400A4DC04 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		73B2665414E1479400A4DC04 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		73B2665814E1479400A4DC04 /* FallingBricks-Info.plist */ = {isa = PBXFileReference; path = "FallingBricks-Info.plist"; sourceTree = "<group>"; };
+		73B2665A14E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		73B2665C14E1479400A4DC04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		73B2665E14E1479400A4DC04 /* FallingBricks-Prefix.pch */ = {isa = PBXFileReference; path = "FallingBricks-Prefix.pch"; sourceTree = "<group>"; };
+		73B2665F14E1479400A4DC04 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		73B2666014E1479400A4DC04 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		73B2666314E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		73B2666614E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		73B2666814E1479400A4DC04 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		73B2666914E1479400A4DC04 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		73B2667014E1479400A4DC04 /* FallingBricksTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallingBricksTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73B2667114E1479400A4DC04 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		73B2667914E1479400A4DC04 /* FallingBricksTests-Info.plist */ = {isa = PBXFileReference; path = "FallingBricksTests-Info.plist"; sourceTree = "<group>"; };
+		73B2667B14E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		73B2667D14E1479400A4DC04 /* FallingBricksTests.h */ = {isa = PBXFileReference; path = FallingBricksTests.h; sourceTree = "<group>"; };
+		73B2667E14E1479400A4DC04 /* FallingBricksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FallingBricksTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		73B2664914E1479400A4DC04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B2665114E1479400A4DC04 /* UIKit.framework in Frameworks */,
+				73B2665314E1479400A4DC04 /* Foundation.framework in Frameworks */,
+				73B2665514E1479400A4DC04 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73B2666C14E1479400A4DC04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B2667214E1479400A4DC04 /* SenTestingKit.framework in Frameworks */,
+				73B2667314E1479400A4DC04 /* UIKit.framework in Frameworks */,
+				73B2667414E1479400A4DC04 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		73B2664114E1479400A4DC04 = {
+			isa = PBXGroup;
+			children = (
+				73B2665614E1479400A4DC04 /* FallingBricks */,
+				73B2667714E1479400A4DC04 /* FallingBricksTests */,
+				73B2664F14E1479400A4DC04 /* Frameworks */,
+				73B2664D14E1479400A4DC04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		73B2664D14E1479400A4DC04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				73B2664C14E1479400A4DC04 /* FallingBricks.app */,
+				73B2667014E1479400A4DC04 /* FallingBricksTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		73B2664F14E1479400A4DC04 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				73B2665014E1479400A4DC04 /* UIKit.framework */,
+				73B2665214E1479400A4DC04 /* Foundation.framework */,
+				73B2665414E1479400A4DC04 /* CoreGraphics.framework */,
+				73B2667114E1479400A4DC04 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		73B2665614E1479400A4DC04 /* FallingBricks */ = {
+			isa = PBXGroup;
+			children = (
+				73B2665F14E1479400A4DC04 /* AppDelegate.h */,
+				73B2666014E1479400A4DC04 /* AppDelegate.m */,
+				73B2666214E1479400A4DC04 /* MainStoryboard_iPhone.storyboard */,
+				73B2666514E1479400A4DC04 /* MainStoryboard_iPad.storyboard */,
+				73B2666814E1479400A4DC04 /* ViewController.h */,
+				73B2666914E1479400A4DC04 /* ViewController.m */,
+				73B2665714E1479400A4DC04 /* Supporting Files */,
+			);
+			path = FallingBricks;
+			sourceTree = "<group>";
+		};
+		73B2665714E1479400A4DC04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				73B2665814E1479400A4DC04 /* FallingBricks-Info.plist */,
+				73B2665914E1479400A4DC04 /* InfoPlist.strings */,
+				73B2665C14E1479400A4DC04 /* main.m */,
+				73B2665E14E1479400A4DC04 /* FallingBricks-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		73B2667714E1479400A4DC04 /* FallingBricksTests */ = {
+			isa = PBXGroup;
+			children = (
+				73B2667D14E1479400A4DC04 /* FallingBricksTests.h */,
+				73B2667E14E1479400A4DC04 /* FallingBricksTests.m */,
+				73B2667814E1479400A4DC04 /* Supporting Files */,
+			);
+			path = FallingBricksTests;
+			sourceTree = "<group>";
+		};
+		73B2667814E1479400A4DC04 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				73B2667914E1479400A4DC04 /* FallingBricksTests-Info.plist */,
+				73B2667A14E1479400A4DC04 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		73B2664B14E1479400A4DC04 /* FallingBricks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73B2668214E1479400A4DC04 /* Build configuration list for PBXNativeTarget "FallingBricks" */;
+			buildPhases = (
+				73B2664814E1479400A4DC04 /* Sources */,
+				73B2664914E1479400A4DC04 /* Frameworks */,
+				73B2664A14E1479400A4DC04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FallingBricks;
+			productName = FallingBricks;
+			productReference = 73B2664C14E1479400A4DC04 /* FallingBricks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		73B2666F14E1479400A4DC04 /* FallingBricksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73B2668514E1479400A4DC04 /* Build configuration list for PBXNativeTarget "FallingBricksTests" */;
+			buildPhases = (
+				73B2666B14E1479400A4DC04 /* Sources */,
+				73B2666C14E1479400A4DC04 /* Frameworks */,
+				73B2666D14E1479400A4DC04 /* Resources */,
+				73B2666E14E1479400A4DC04 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73B2667614E1479400A4DC04 /* PBXTargetDependency */,
+			);
+			name = FallingBricksTests;
+			productName = FallingBricksTests;
+			productReference = 73B2667014E1479400A4DC04 /* FallingBricksTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		73B2664314E1479400A4DC04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 73B2664614E1479400A4DC04 /* Build configuration list for PBXProject "FallingBricks" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 73B2664114E1479400A4DC04;
+			productRefGroup = 73B2664D14E1479400A4DC04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				73B2664B14E1479400A4DC04 /* FallingBricks */,
+				73B2666F14E1479400A4DC04 /* FallingBricksTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		73B2664A14E1479400A4DC04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B2665B14E1479400A4DC04 /* InfoPlist.strings in Resources */,
+				73B2666414E1479400A4DC04 /* MainStoryboard_iPhone.storyboard in Resources */,
+				73B2666714E1479400A4DC04 /* MainStoryboard_iPad.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73B2666D14E1479400A4DC04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B2667C14E1479400A4DC04 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		73B2666E14E1479400A4DC04 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		73B2664814E1479400A4DC04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B2665D14E1479400A4DC04 /* main.m in Sources */,
+				73B2666114E1479400A4DC04 /* AppDelegate.m in Sources */,
+				73B2666A14E1479400A4DC04 /* ViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73B2666B14E1479400A4DC04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73B2667F14E1479400A4DC04 /* FallingBricksTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		73B2667614E1479400A4DC04 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 73B2664B14E1479400A4DC04 /* FallingBricks */;
+			targetProxy = 73B2667514E1479400A4DC04 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		73B2665914E1479400A4DC04 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73B2665A14E1479400A4DC04 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		73B2666214E1479400A4DC04 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73B2666314E1479400A4DC04 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		73B2666514E1479400A4DC04 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73B2666614E1479400A4DC04 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		73B2667A14E1479400A4DC04 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73B2667B14E1479400A4DC04 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		73B2668014E1479400A4DC04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		73B2668114E1479400A4DC04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		73B2668314E1479400A4DC04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FallingBricks/FallingBricks-Prefix.pch";
+				INFOPLIST_FILE = "FallingBricks/FallingBricks-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		73B2668414E1479400A4DC04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FallingBricks/FallingBricks-Prefix.pch";
+				INFOPLIST_FILE = "FallingBricks/FallingBricks-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		73B2668614E1479400A4DC04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FallingBricks.app/FallingBricks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FallingBricks/FallingBricks-Prefix.pch";
+				INFOPLIST_FILE = "FallingBricksTests/FallingBricksTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		73B2668714E1479400A4DC04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/FallingBricks.app/FallingBricks";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FallingBricks/FallingBricks-Prefix.pch";
+				INFOPLIST_FILE = "FallingBricksTests/FallingBricksTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		73B2664614E1479400A4DC04 /* Build configuration list for PBXProject "FallingBricks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73B2668014E1479400A4DC04 /* Debug */,
+				73B2668114E1479400A4DC04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73B2668214E1479400A4DC04 /* Build configuration list for PBXNativeTarget "FallingBricks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73B2668314E1479400A4DC04 /* Debug */,
+				73B2668414E1479400A4DC04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		73B2668514E1479400A4DC04 /* Build configuration list for PBXNativeTarget "FallingBricksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73B2668614E1479400A4DC04 /* Debug */,
+				73B2668714E1479400A4DC04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 73B2664314E1479400A4DC04 /* Project object */;
+}
