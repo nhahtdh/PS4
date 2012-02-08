@@ -18,9 +18,3 @@
 #else
 #   define DLog(...)
 #endif
-
-/*
-#define EPS 0.0000000001
-
-#define float_equal(a, b) (fabs((a) - (b)) < EPS)
-*/

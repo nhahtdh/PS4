@@ -10,6 +10,43 @@
 
 @implementation GameObject
 
+- (CGSize) sizes {
+    return CGSizeMake(sizes.width * self.scale, sizes.height * self.scale);
+}
+
+@synthesize center;
+@synthesize angle;
+@synthesize scale;
+
+@synthesize mass;
+
+- (CGFloat) inertia {
+    CGSize currentSizes = self.sizes;
+    return (currentSizes.width * currentSizes.width + currentSizes.height * currentSizes.height) * self.mass / 12.;
+}
+
+@synthesize force;
+@synthesize torque;
+
+@synthesize velocity;
+@synthesize angularVelocity;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -26,6 +63,7 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
+ */
 
 #pragma mark - View lifecycle
 
@@ -44,17 +82,21 @@
 }
 */
 
+/*
 - (void)viewDidUnload
 {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
+ */
 
+/*
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
 	return YES;
 }
+ */
 
 @end

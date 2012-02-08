@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		73B0293F14E2965A0000D68F /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B0293E14E2965A0000D68F /* GameObject.m */; };
+		73B0295114E2B7140000D68F /* GameEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B0295014E2B7140000D68F /* GameEngine.m */; };
 		73B2665114E1479400A4DC04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665014E1479400A4DC04 /* UIKit.framework */; };
 		73B2665314E1479400A4DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665214E1479400A4DC04 /* Foundation.framework */; };
 		73B2665514E1479400A4DC04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665414E1479400A4DC04 /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		73B0293D14E2965A0000D68F /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
 		73B0293E14E2965A0000D68F /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
+		73B0294F14E2B7140000D68F /* GameEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameEngine.h; sourceTree = "<group>"; };
+		73B0295014E2B7140000D68F /* GameEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameEngine.m; sourceTree = "<group>"; };
 		73B2664C14E1479400A4DC04 /* FallingBricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingBricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73B2665014E1479400A4DC04 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		73B2665214E1479400A4DC04 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 		73B2665614E1479400A4DC04 /* FallingBricks */ = {
 			isa = PBXGroup;
 			children = (
+				73B0294F14E2B7140000D68F /* GameEngine.h */,
+				73B0295014E2B7140000D68F /* GameEngine.m */,
 				73B0293D14E2965A0000D68F /* GameObject.h */,
 				73B0293E14E2965A0000D68F /* GameObject.m */,
 				73B266B814E1492200A4DC04 /* Matrix2D.h */,
@@ -278,6 +283,7 @@
 				73B266BC14E1492200A4DC04 /* Matrix2D.m in Sources */,
 				73B266BD14E1492200A4DC04 /* Vector2D.m in Sources */,
 				73B0293F14E2965A0000D68F /* GameObject.m in Sources */,
+				73B0295114E2B7140000D68F /* GameEngine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

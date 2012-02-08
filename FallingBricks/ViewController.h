@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GameEngine.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+    GameEngine *engine;
+}
+
+@property (strong, nonatomic, readonly) GameEngine* engine;
 
 @end

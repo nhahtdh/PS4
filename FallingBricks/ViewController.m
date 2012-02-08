@@ -10,6 +10,8 @@
 
 @implementation ViewController
 
+@synthesize engine = engine_;
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -21,6 +23,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    engine_ = [[GameEngine alloc] init];
+    
 	// Do any additional setup after loading the view, typically from a nib.
 }
 
