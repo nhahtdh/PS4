@@ -7,20 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73B0293F14E2965A0000D68F /* GameObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B0293E14E2965A0000D68F /* GameObject.m */; };
 		73B2665114E1479400A4DC04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665014E1479400A4DC04 /* UIKit.framework */; };
 		73B2665314E1479400A4DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665214E1479400A4DC04 /* Foundation.framework */; };
 		73B2665514E1479400A4DC04 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665414E1479400A4DC04 /* CoreGraphics.framework */; };
 		73B2665B14E1479400A4DC04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73B2665914E1479400A4DC04 /* InfoPlist.strings */; };
 		73B2665D14E1479400A4DC04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2665C14E1479400A4DC04 /* main.m */; };
 		73B2666114E1479400A4DC04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2666014E1479400A4DC04 /* AppDelegate.m */; };
-		73B2666414E1479400A4DC04 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B2666214E1479400A4DC04 /* MainStoryboard_iPhone.storyboard */; };
-		73B2666714E1479400A4DC04 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B2666514E1479400A4DC04 /* MainStoryboard_iPad.storyboard */; };
+		73B2666714E1479400A4DC04 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B2666514E1479400A4DC04 /* MainStoryboard.storyboard */; };
 		73B2666A14E1479400A4DC04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2666914E1479400A4DC04 /* ViewController.m */; };
 		73B2667214E1479400A4DC04 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2667114E1479400A4DC04 /* SenTestingKit.framework */; };
 		73B2667314E1479400A4DC04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665014E1479400A4DC04 /* UIKit.framework */; };
 		73B2667414E1479400A4DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665214E1479400A4DC04 /* Foundation.framework */; };
 		73B2667C14E1479400A4DC04 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73B2667A14E1479400A4DC04 /* InfoPlist.strings */; };
 		73B2667F14E1479400A4DC04 /* FallingBricksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2667E14E1479400A4DC04 /* FallingBricksTests.m */; };
+		73B266BC14E1492200A4DC04 /* Matrix2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B266B914E1492200A4DC04 /* Matrix2D.m */; };
+		73B266BD14E1492200A4DC04 /* Vector2D.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B266BB14E1492200A4DC04 /* Vector2D.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,26 +36,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		73B0293D14E2965A0000D68F /* GameObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameObject.h; sourceTree = "<group>"; };
+		73B0293E14E2965A0000D68F /* GameObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameObject.m; sourceTree = "<group>"; };
 		73B2664C14E1479400A4DC04 /* FallingBricks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FallingBricks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73B2665014E1479400A4DC04 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		73B2665214E1479400A4DC04 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		73B2665414E1479400A4DC04 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		73B2665814E1479400A4DC04 /* FallingBricks-Info.plist */ = {isa = PBXFileReference; path = "FallingBricks-Info.plist"; sourceTree = "<group>"; };
+		73B2665814E1479400A4DC04 /* FallingBricks-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FallingBricks-Info.plist"; sourceTree = "<group>"; };
 		73B2665A14E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		73B2665C14E1479400A4DC04 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		73B2665E14E1479400A4DC04 /* FallingBricks-Prefix.pch */ = {isa = PBXFileReference; path = "FallingBricks-Prefix.pch"; sourceTree = "<group>"; };
-		73B2665F14E1479400A4DC04 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		73B2665E14E1479400A4DC04 /* FallingBricks-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FallingBricks-Prefix.pch"; sourceTree = "<group>"; };
+		73B2665F14E1479400A4DC04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73B2666014E1479400A4DC04 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		73B2666314E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		73B2666614E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		73B2666814E1479400A4DC04 /* ViewController.h */ = {isa = PBXFileReference; path = ViewController.h; sourceTree = "<group>"; };
+		73B2666614E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		73B2666814E1479400A4DC04 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		73B2666914E1479400A4DC04 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		73B2667014E1479400A4DC04 /* FallingBricksTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallingBricksTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73B2667114E1479400A4DC04 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		73B2667914E1479400A4DC04 /* FallingBricksTests-Info.plist */ = {isa = PBXFileReference; path = "FallingBricksTests-Info.plist"; sourceTree = "<group>"; };
+		73B2667914E1479400A4DC04 /* FallingBricksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FallingBricksTests-Info.plist"; sourceTree = "<group>"; };
 		73B2667B14E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		73B2667D14E1479400A4DC04 /* FallingBricksTests.h */ = {isa = PBXFileReference; path = FallingBricksTests.h; sourceTree = "<group>"; };
+		73B2667D14E1479400A4DC04 /* FallingBricksTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FallingBricksTests.h; sourceTree = "<group>"; };
 		73B2667E14E1479400A4DC04 /* FallingBricksTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FallingBricksTests.m; sourceTree = "<group>"; };
+		73B266B814E1492200A4DC04 /* Matrix2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Matrix2D.h; sourceTree = "<group>"; };
+		73B266B914E1492200A4DC04 /* Matrix2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Matrix2D.m; sourceTree = "<group>"; };
+		73B266BA14E1492200A4DC04 /* Vector2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2D.h; sourceTree = "<group>"; };
+		73B266BB14E1492200A4DC04 /* Vector2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector2D.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,10 +120,15 @@
 		73B2665614E1479400A4DC04 /* FallingBricks */ = {
 			isa = PBXGroup;
 			children = (
+				73B0293D14E2965A0000D68F /* GameObject.h */,
+				73B0293E14E2965A0000D68F /* GameObject.m */,
+				73B266B814E1492200A4DC04 /* Matrix2D.h */,
+				73B266B914E1492200A4DC04 /* Matrix2D.m */,
+				73B266BA14E1492200A4DC04 /* Vector2D.h */,
+				73B266BB14E1492200A4DC04 /* Vector2D.m */,
 				73B2665F14E1479400A4DC04 /* AppDelegate.h */,
 				73B2666014E1479400A4DC04 /* AppDelegate.m */,
-				73B2666214E1479400A4DC04 /* MainStoryboard_iPhone.storyboard */,
-				73B2666514E1479400A4DC04 /* MainStoryboard_iPad.storyboard */,
+				73B2666514E1479400A4DC04 /* MainStoryboard.storyboard */,
 				73B2666814E1479400A4DC04 /* ViewController.h */,
 				73B2666914E1479400A4DC04 /* ViewController.m */,
 				73B2665714E1479400A4DC04 /* Supporting Files */,
@@ -225,8 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				73B2665B14E1479400A4DC04 /* InfoPlist.strings in Resources */,
-				73B2666414E1479400A4DC04 /* MainStoryboard_iPhone.storyboard in Resources */,
-				73B2666714E1479400A4DC04 /* MainStoryboard_iPad.storyboard in Resources */,
+				73B2666714E1479400A4DC04 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +275,9 @@
 				73B2665D14E1479400A4DC04 /* main.m in Sources */,
 				73B2666114E1479400A4DC04 /* AppDelegate.m in Sources */,
 				73B2666A14E1479400A4DC04 /* ViewController.m in Sources */,
+				73B266BC14E1492200A4DC04 /* Matrix2D.m in Sources */,
+				73B266BD14E1492200A4DC04 /* Vector2D.m in Sources */,
+				73B0293F14E2965A0000D68F /* GameObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,20 +308,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		73B2666214E1479400A4DC04 /* MainStoryboard_iPhone.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				73B2666314E1479400A4DC04 /* en */,
-			);
-			name = MainStoryboard_iPhone.storyboard;
-			sourceTree = "<group>";
-		};
-		73B2666514E1479400A4DC04 /* MainStoryboard_iPad.storyboard */ = {
+		73B2666514E1479400A4DC04 /* MainStoryboard.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				73B2666614E1479400A4DC04 /* en */,
 			);
-			name = MainStoryboard_iPad.storyboard;
+			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		73B2667A14E1479400A4DC04 /* InfoPlist.strings */ = {
@@ -374,7 +380,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FallingBricks/FallingBricks-Prefix.pch";
 				INFOPLIST_FILE = "FallingBricks/FallingBricks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -385,7 +393,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FallingBricks/FallingBricks-Prefix.pch";
 				INFOPLIST_FILE = "FallingBricks/FallingBricks-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -443,6 +453,7 @@
 				73B2668414E1479400A4DC04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		73B2668514E1479400A4DC04 /* Build configuration list for PBXNativeTarget "FallingBricksTests" */ = {
 			isa = XCConfigurationList;
@@ -451,6 +462,7 @@
 				73B2668714E1479400A4DC04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
