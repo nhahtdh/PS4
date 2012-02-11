@@ -34,6 +34,10 @@
   return [[Vector2D alloc] initWith:x y:y];
 }
 
++(Vector2D*)initZero {
+    return [Vector2D vectorWith: 0 y:0];
+}
+
 -(Vector2D*)add:(Vector2D*)v {
   // REQUIRES: v != nil 
   // EFFECTS: Returns a new vector that is the sum of self and v.

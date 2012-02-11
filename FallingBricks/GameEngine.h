@@ -10,11 +10,13 @@
 #import "Vector2D.h"
 
 @interface GameEngine : NSObject<UIAccelerometerDelegate> {
-    Vector2D *gravitation;
+    NSTimeInterval timeStep;
+    Vector2D *gravity;
 }
 
-@property (strong, nonatomic, readonly) Vector2D* gravitation;
+@property (readonly) NSTimeInterval timeStep;
+@property (strong, nonatomic, readonly) Vector2D* gravity;
 
--(void) updateGameObjects: (NSArray*) gameObjects withTimeStep: (CGFloat) dt;
+-(void) updateGameObjects: (NSArray*) gameObjects;
 
 @end

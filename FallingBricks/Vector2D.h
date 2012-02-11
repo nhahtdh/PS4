@@ -25,6 +25,8 @@
 +(Vector2D*)vectorWith:(double)x y:(double)y;
   // EFFECTS: Returns an autoreleased 2D vector
 
++(Vector2D*)initZero;
+
 -(Vector2D*)add:(Vector2D*)v;
   // REQUIRES: v != nil 
   // EFFECTS: Returns a new vector that is the sum of self and v.

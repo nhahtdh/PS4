@@ -11,6 +11,9 @@
 
 @interface ViewController : UIViewController {
     GameEngine *engine;
+    NSTimer *timer;
+    
+    NSMutableArray *gameObjectsInGameArea;
 }
 
 @property (strong, nonatomic, readonly) GameEngine* engine;

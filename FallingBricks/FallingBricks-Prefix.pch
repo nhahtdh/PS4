@@ -18,3 +18,5 @@
 #else
 #   define DLog(...)
 #endif
+
+#define degree_to_radian(d) ((d) * M_PI / 180.)

@@ -15,13 +15,13 @@
     CGFloat angle;
     CGFloat scale; // Fixed when in-game
     
-    CGFloat mass; // Fixed in PS5
+    CGFloat mass; // In kilograms. Fixed in PS5
     
     Vector2D* force;
-    Vector2D* torque;
+    CGFloat torque;
     
     Vector2D* velocity;
-    Vector2D* angularVelocity;
+    CGFloat angularVelocity;
 }
 
 @property (nonatomic, readonly) CGSize sizes;
@@ -33,17 +33,19 @@
 
 @property (nonatomic, readonly) CGFloat mass;
 @property (nonatomic, readonly) CGFloat inertia;
+// EFFECTS: Return the moment of inertia of the game object calculated from the sizes and mass
 
 @property (strong, nonatomic) Vector2D* force;
-@property (strong, nonatomic) Vector2D* torque;
+@property (nonatomic) CGFloat torque;
 
 @property (strong, nonatomic) Vector2D* velocity;
-@property (strong, nonatomic) Vector2D* angularVelocity;
+@property (nonatomic) CGFloat angularVelocity;
 
-/*
-+ (Vector2D*) gravitationalAcceleration;
+// TODO: Probably add scale later for testing.
+-(id) initWithSizes: (CGSize) s center:(CGPoint) c angle: (CGFloat) a mass:(CGFloat) m;
+// NOTE: This function will not appear in PS5. The function exists for the purpose of testing.
+// EFFECTS: Initialize a game object with sizes, center, rotation angle and mass
 
-- (void) updateState: (CGFloat) dt;
- */
+-(void)redraw;
 
 @end
