@@ -10,19 +10,26 @@
 
 @implementation GameObject
 
-- (CGSize) sizes {
+@synthesize name;
+
+// @synthesize sizes;
+
+- (CGSize) actualSizes {
     return CGSizeMake(sizes.width * self.scale, sizes.height * self.scale);
 }
 
 @synthesize center;
 @synthesize angle;
+
 @synthesize scale;
 
+@synthesize canMove;
 @synthesize mass;
+@synthesize friction;
+@synthesize restitution;
 
 - (CGFloat) inertia {
-    CGSize currentSizes = self.sizes;
-    return (currentSizes.width * currentSizes.width + currentSizes.height * currentSizes.height) * self.mass / 12.;
+    return (self.actualSizes.width * self.actualSizes.width + self.actualSizes.height * self.actualSizes.height) * self.mass / 12.;
 }
 
 @synthesize force;
@@ -31,31 +38,42 @@
 @synthesize velocity;
 @synthesize angularVelocity;
 
--(id) initWithSizes:(CGSize)s center:(CGPoint)c angle:(CGFloat)a mass:(CGFloat)m {
+-(id) initWithSizes:(CGSize)s center:(CGPoint)c angle:(CGFloat)a
+               mass:(CGFloat)m friction:(CGFloat)f restitution:(CGFloat)r
+            canMove:(BOOL)moveability {
     if (self = [super init]) {
+        DLog(@"%f", a);
         sizes = s;
         center = c;
         angle = a;
         scale = 1.0;
+        canMove = moveability;
         mass = m;
+        friction = f;
+        restitution = r;
         
         force = [Vector2D initZero];
         torque = 0.;
         velocity = [Vector2D initZero];
         angularVelocity = 0.;
         
+        [self.view setFrame: CGRectMake(0, 0, sizes.width, sizes.height)];
         [self redraw];
     }
     return self;
 }
 
 -(void) redraw {
-    [self.view setFrame: CGRectMake(0, 0, self.sizes.width, self.sizes.height)];
+    // The sequence: setFrame, setTransform, setFrame, setTransform will cause the image to deform.
+    // [self.view setFrame: CGRectMake(0, 0, sizes.width, sizes.height)];
     [self.view setCenter: self.center];
-    [self.view setTransform: CGAffineTransformTranslate(CGAffineTransformMakeRotation(self.angle), self.scale, self.scale)];
+    DLog(@"Angle: %f Center: (%f, %f)", self.angle, self.view.center.x, self.view.center.y);
+    [self.view setTransform: CGAffineTransformRotate(CGAffineTransformMakeScale(self.scale, self.scale), self.angle)];
 }
 
-
+-(NSString*) description {
+    return [NSString stringWithFormat: @"<GameObject name:/%@/ velocity:%@ angularVelocity:%f>", self.name, self.velocity, self.angularVelocity];
+}
 
 
 

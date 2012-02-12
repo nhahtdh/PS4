@@ -14,7 +14,7 @@
 @synthesize engine = engine_;
 
 - (void)updateGameObjects: (NSTimer*) timer {
-    [self.engine updateGameObjects: gameObjectsInGameArea];
+    [self.engine updateGameObjects: [NSArray arrayWithArray: gameObjectsInGameArea]];
 }
 
 - (void)startButtonPressed: (id) sender {
@@ -38,35 +38,100 @@
 
 #pragma mark - View lifecycle
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    // Do any additional setup after loading the view, typically from a nib.
-    engine_ = [[GameEngine alloc] init];
-    
-    gameObjectsInGameArea = [NSMutableArray array];
-    
+- (void)setUpGameObject {
+    // NOTE: This is a functiont that only exists in PS4
     GameObject *o;
     
     o = [[GameObject alloc] initWithSizes: CGSizeMake(200, 100)
-                                   center: CGPointMake(200, 300) 
+                                   center: CGPointMake(500, 500) 
                                     angle: degree_to_radian(0)
-                                     mass: 5];
+                                     mass: 50
+                                 friction: 0.5
+                              restitution: 0.2
+                                  canMove: YES];
+    o.name = @"Gray object";
     [o.view setBackgroundColor: [UIColor grayColor]];
     [self.view addSubview: o.view];
     [gameObjectsInGameArea addObject: o];
     
     
-    o = [[GameObject alloc] initWithSizes: CGSizeMake(50, 50)
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(100, 100)
                                    center: CGPointMake(100, 100) 
-                                    angle: degree_to_radian(60)
-                                     mass: 1];
+                                    angle: (60 * M_PI / 180) // degree_to_radian(60)
+                                     mass: 50
+                                 friction: 0.5
+                              restitution: 0.2
+                                  canMove: YES];
+    o.name = @"Cyan object";
     [o.view setBackgroundColor: [UIColor cyanColor]];
     [self.view addSubview: o.view];
     [gameObjectsInGameArea addObject: o];
+}
+
+- (void)setUpWalls {
+    GameObject *o;
+    
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1200)
+                                   center: CGPointMake(-495, 1004 / 2)
+                                    angle: 0 
+                                     mass: INFINITY
+                                 friction: 0.
+                              restitution: 0.
+                                  canMove: NO];
+    o.name = @"Left wall";
+    [o.view setBackgroundColor: [UIColor redColor]];
+    [self.view addSubview: o.view];
+    [gameObjectsInGameArea addObject: o];
+    
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1200)
+                                   center: CGPointMake(767 + 495, 1004 / 2)
+                                    angle: 0 
+                                     mass: INFINITY
+                                 friction: 0.
+                              restitution: 0.
+                                  canMove: NO];
+    o.name = @"Right wall";
+    [o.view setBackgroundColor: [UIColor redColor]];
+    [self.view addSubview: o.view];
+    [gameObjectsInGameArea addObject: o];
+    
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1000)
+                                   center: CGPointMake(768 / 2, -495)
+                                    angle: 0 
+                                     mass: INFINITY
+                                 friction: 0.
+                              restitution: 0.
+                                  canMove: NO];
+    o.name = @"Top wall";
+    [o.view setBackgroundColor: [UIColor redColor]];
+    [self.view addSubview: o.view];
+    [gameObjectsInGameArea addObject: o];
+    
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1000)
+                                   center: CGPointMake(768 / 2, 1003 + 495)
+                                    angle: 0 
+                                     mass: INFINITY
+                                 friction: 0.
+                              restitution: 0.
+                                  canMove: NO];
+    o.name = @"Bottom wall";
+    [o.view setBackgroundColor: [UIColor redColor]];
+    [self.view addSubview: o.view];
+    [gameObjectsInGameArea addObject: o];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    // Do any additional setup after loading the view, typically from a nib.
+    gameObjectsInGameArea = [NSMutableArray array];
+    
+    [self setUpWalls];
+    [self setUpGameObject];
     
     // Simulate user pressing start button
+    engine_ = [[GameEngine alloc] init];
 	[self startButtonPressed: self];
 }
 

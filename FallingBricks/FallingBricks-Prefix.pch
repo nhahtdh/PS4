@@ -10,6 +10,7 @@
 
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
+    #import <CoreMotion/CoreMotion.h>
     #import <Foundation/Foundation.h>
 #endif
 
@@ -20,3 +21,6 @@
 #endif
 
 #define degree_to_radian(d) ((d) * M_PI / 180.)
+
+#define EPS 0.0000001
+#define float_equals(a, b) (fabs((a) - (b)) < EPS)

@@ -10,12 +10,17 @@
 #import "Vector2D.h"
 
 @interface GameObject : UIViewController {
-    CGSize sizes; // Fixed in PS5
+    NSString *name; // For testing purpose.
+    
+    CGSize sizes; // Fixed in PS5 by object.
     CGPoint center;
     CGFloat angle;
     CGFloat scale; // Fixed when in-game
     
-    CGFloat mass; // In kilograms. Fixed in PS5
+    BOOL canMove;
+    CGFloat mass; // In kilograms. Fixed in PS5 by object (or by object and scale).
+    CGFloat friction; // Fixed in PS5 by object.
+    CGFloat restitution; // Fixed in PS5 by object. Elasticity.
     
     Vector2D* force;
     CGFloat torque;
@@ -24,15 +29,21 @@
     CGFloat angularVelocity;
 }
 
-@property (nonatomic, readonly) CGSize sizes;
-// EFFECTS: Return the sizes (width and height) of the rectangle afetr scaling
+// @property (nonatomic, readonly) CGSize sizes;
+
+-(CGSize) actualSizes;
+
+@property (strong, nonatomic) NSString* name;
 
 @property (nonatomic) CGPoint center;
 @property (nonatomic) CGFloat angle;
 @property (nonatomic, readonly) CGFloat scale;
 
+@property (nonatomic) BOOL canMove;
 @property (nonatomic, readonly) CGFloat mass;
 @property (nonatomic, readonly) CGFloat inertia;
+@property (nonatomic, readonly) CGFloat friction;
+@property (nonatomic, readonly) CGFloat restitution;
 // EFFECTS: Return the moment of inertia of the game object calculated from the sizes and mass
 
 @property (strong, nonatomic) Vector2D* force;
@@ -42,7 +53,9 @@
 @property (nonatomic) CGFloat angularVelocity;
 
 // TODO: Probably add scale later for testing.
--(id) initWithSizes: (CGSize) s center:(CGPoint) c angle: (CGFloat) a mass:(CGFloat) m;
+-(id) initWithSizes: (CGSize) s center:(CGPoint) c angle: (CGFloat) a
+               mass:(CGFloat) m friction: (CGFloat) f restitution: (CGFloat) r
+            canMove: (BOOL)moveability;
 // NOTE: This function will not appear in PS5. The function exists for the purpose of testing.
 // EFFECTS: Initialize a game object with sizes, center, rotation angle and mass
 

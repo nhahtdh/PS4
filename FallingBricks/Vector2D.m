@@ -86,4 +86,8 @@
   return [Vector2D vectorWith:(v*self.y) y:(-v*self.x)];
 }
 
+-(NSString*) description {
+    return [NSString stringWithFormat: @"V(%f, %f)", self.x, self.y];
+}
+
 @end

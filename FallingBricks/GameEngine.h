@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Vector2D.h"
 
+double reciprocal(double x);
+
 @interface GameEngine : NSObject<UIAccelerometerDelegate> {
     NSTimeInterval timeStep;
     Vector2D *gravity;
+    // CMMotionManager *manager;
 }
 
 @property (readonly) NSTimeInterval timeStep;
