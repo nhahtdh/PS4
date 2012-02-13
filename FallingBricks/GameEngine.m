@@ -291,11 +291,10 @@
     DLog(@"Contact points between %@ and %@: (%f, %f) (%f, %f)", a, b, c[0].x, c[0].y, c[1].y, c[1].y);
     
     // Apply impulses at contact points
-    for (int l = 0; l < 8; l++) {
+    for (int l = 0; l < 10; l++) {
         // One iteration
         for (int i = 0; i < 2; i++) {
-            // if (s[i] < 0) {
-            {
+            if (s[i] < 0) {
                 Vector2D *rA, *rB;
                 rA = [c[i] subtract: pA];
                 rB = [c[i] subtract: pB];

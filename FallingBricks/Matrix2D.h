@@ -16,8 +16,8 @@
 	Vector2D *col1, *col2;
 }
 
-@property (readonly) Vector2D* col1;
-@property (readonly) Vector2D* col2;
+@property (strong, readonly) Vector2D* col1;
+@property (strong, readonly) Vector2D* col2;
 
 // Static Method for creating a Matrix with 2 Vector2Ds.
 +(Matrix2D*)matrixWithVector:(Vector2D*)v1 andVector:(Vector2D*)v2;

@@ -16,7 +16,7 @@
 		73B2665D14E1479400A4DC04 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2665C14E1479400A4DC04 /* main.m */; };
 		73B2666114E1479400A4DC04 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2666014E1479400A4DC04 /* AppDelegate.m */; };
 		73B2666714E1479400A4DC04 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73B2666514E1479400A4DC04 /* MainStoryboard.storyboard */; };
-		73B2666A14E1479400A4DC04 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2666914E1479400A4DC04 /* ViewController.m */; };
+		73B2666A14E1479400A4DC04 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 73B2666914E1479400A4DC04 /* GameViewController.m */; };
 		73B2667214E1479400A4DC04 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2667114E1479400A4DC04 /* SenTestingKit.framework */; };
 		73B2667314E1479400A4DC04 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665014E1479400A4DC04 /* UIKit.framework */; };
 		73B2667414E1479400A4DC04 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73B2665214E1479400A4DC04 /* Foundation.framework */; };
@@ -52,8 +52,8 @@
 		73B2665F14E1479400A4DC04 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		73B2666014E1479400A4DC04 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		73B2666614E1479400A4DC04 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		73B2666814E1479400A4DC04 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		73B2666914E1479400A4DC04 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		73B2666814E1479400A4DC04 /* GameViewController.h */ = {isa = PBXFileReference; path = GameViewController.h; sourceTree = "<group>"; };
+		73B2666914E1479400A4DC04 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		73B2667014E1479400A4DC04 /* FallingBricksTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FallingBricksTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		73B2667114E1479400A4DC04 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		73B2667914E1479400A4DC04 /* FallingBricksTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FallingBricksTests-Info.plist"; sourceTree = "<group>"; };
@@ -134,8 +134,8 @@
 				73B2665F14E1479400A4DC04 /* AppDelegate.h */,
 				73B2666014E1479400A4DC04 /* AppDelegate.m */,
 				73B2666514E1479400A4DC04 /* MainStoryboard.storyboard */,
-				73B2666814E1479400A4DC04 /* ViewController.h */,
-				73B2666914E1479400A4DC04 /* ViewController.m */,
+				73B2666814E1479400A4DC04 /* GameViewController.h */,
+				73B2666914E1479400A4DC04 /* GameViewController.m */,
 				73B2665714E1479400A4DC04 /* Supporting Files */,
 			);
 			path = FallingBricks;
@@ -279,7 +279,7 @@
 			files = (
 				73B2665D14E1479400A4DC04 /* main.m in Sources */,
 				73B2666114E1479400A4DC04 /* AppDelegate.m in Sources */,
-				73B2666A14E1479400A4DC04 /* ViewController.m in Sources */,
+				73B2666A14E1479400A4DC04 /* GameViewController.m in Sources */,
 				73B266BC14E1492200A4DC04 /* Matrix2D.m in Sources */,
 				73B266BD14E1492200A4DC04 /* Vector2D.m in Sources */,
 				73B0293F14E2965A0000D68F /* GameObject.m in Sources */,
