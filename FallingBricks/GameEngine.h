@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "GameObject.h"
 #import "Vector2D.h"
 
 double reciprocal(double x);
@@ -19,6 +20,8 @@ double reciprocal(double x);
 
 @property (readonly) NSTimeInterval timeStep;
 @property (strong, nonatomic, readonly) Vector2D* gravity;
+
++(BOOL) collideGameObject: (GameObject*) a: (GameObject*) b : (CGFloat) timeStep;
 
 -(void) updateGameObjects: (NSArray*) gameObjects;
 

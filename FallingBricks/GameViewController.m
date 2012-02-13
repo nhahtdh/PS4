@@ -45,6 +45,7 @@
     o = [[GameObject alloc] initWithSizes: CGSizeMake(200, 100)
                                    center: CGPointMake(400, 400) 
                                     angle: degree_to_radian(0)
+                                    scale: 1.0
                                      mass: 5
                                  friction: 0.
                               restitution: 1.
@@ -58,6 +59,7 @@
     o = [[GameObject alloc] initWithSizes: CGSizeMake(100, 100)
                                    center: CGPointMake(100, 100) 
                                     angle: degree_to_radian(60)
+                                    scale: 1.2
                                      mass: 2
                                  friction: 0.
                               restitution: 1.
@@ -68,9 +70,10 @@
     [gameObjectsInGameArea addObject: o];
     
     
-    o = [[GameObject alloc] initWithSizes: CGSizeMake(250, 25)
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(250, 35)
                                    center: CGPointMake(500, 600) 
                                     angle: degree_to_radian(20)
+                                    scale: 1.0
                                      mass: 2
                                  friction: 0.5
                               restitution: 0.5
@@ -87,6 +90,7 @@
     o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1200)
                                    center: CGPointMake(-495, 1004 / 2)
                                     angle: 0 
+                                    scale: 1.0
                                      mass: INFINITY
                                  friction: 0.8
                               restitution: 0.3
@@ -99,6 +103,7 @@
     o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1200)
                                    center: CGPointMake(767 + 495, 1004 / 2)
                                     angle: 0 
+                                    scale: 1.0
                                      mass: INFINITY
                                  friction: 0.8
                               restitution: 0.3
@@ -111,6 +116,7 @@
     o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1000)
                                    center: CGPointMake(768 / 2, -495)
                                     angle: 0 
+                                    scale: 1.0
                                      mass: INFINITY
                                  friction: 0.8
                               restitution: 0.3
@@ -123,6 +129,7 @@
     o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1000)
                                    center: CGPointMake(768 / 2, 1003 + 495)
                                     angle: 0 
+                                    scale: 1.0
                                      mass: INFINITY
                                  friction: 0.8
                               restitution: 0.3

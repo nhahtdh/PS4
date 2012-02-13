@@ -7,6 +7,8 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "GameObject.h"
+#import "GameEngine.h"
 
 @interface FallingBricksTests : SenTestCase
 

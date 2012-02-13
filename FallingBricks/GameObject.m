@@ -38,7 +38,7 @@
 @synthesize velocity;
 @synthesize angularVelocity;
 
--(id) initWithSizes:(CGSize)s center:(CGPoint)c angle:(CGFloat)a
+-(id) initWithSizes:(CGSize)s center:(CGPoint)c angle:(CGFloat)a scale: (CGFloat) sc
                mass:(CGFloat)m friction:(CGFloat)f restitution:(CGFloat)r
             canMove:(BOOL)moveability {
     if (self = [super init]) {
@@ -46,7 +46,7 @@
         sizes = s;
         center = c;
         angle = a;
-        scale = 1.0;
+        scale = sc;
         canMove = moveability;
         mass = m;
         friction = f;
@@ -56,6 +56,8 @@
         torque = 0.;
         velocity = [Vector2D initZero];
         angularVelocity = 0.;
+        
+        name = @"Default name";
         
         [self.view setFrame: CGRectMake(0, 0, sizes.width, sizes.height)];
         [self redraw];

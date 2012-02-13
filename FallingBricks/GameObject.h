@@ -52,9 +52,8 @@
 @property (strong, nonatomic) Vector2D* velocity;
 @property (nonatomic) CGFloat angularVelocity;
 
-// TODO: Probably add scale later for testing.
--(id) initWithSizes: (CGSize) s center:(CGPoint) c angle: (CGFloat) a
-               mass:(CGFloat) m friction: (CGFloat) f restitution: (CGFloat) r
+-(id) initWithSizes: (CGSize) s center:(CGPoint) c angle: (CGFloat) a scale: (CGFloat) sc
+               mass: (CGFloat) m friction: (CGFloat) f restitution: (CGFloat) r
             canMove: (BOOL)moveability;
 // NOTE: This function will not appear in PS5. The function exists for the purpose of testing.
 // EFFECTS: Initialize a game object with sizes, center, rotation angle and mass

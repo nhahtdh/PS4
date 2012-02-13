@@ -7,7 +7,6 @@
 //
 
 #import "GameEngine.h"
-#import "GameObject.h"
 #import "Matrix2D.h"
 
 @implementation GameEngine
@@ -92,6 +91,11 @@
 }
 
 +(BOOL) collideGameObject: (GameObject*) a: (GameObject*) b : (CGFloat) timeStep {
+    // EFFECTS: Simulate the collision of 2 game objects and modifies velocity and angular
+    //          velocity of the objects.
+    //          This function returns a boolean for testing purpose and should not be used
+    //          in simulation. The return value indicates whether the 2 game objects are
+    //          overlapping or not based on the average distance between the incident edges.
     Vector2D *pA = [Vector2D vectorWith: a.center.x y: a.center.y];
     Vector2D *pB = [Vector2D vectorWith: b.center.x y: b.center.y];
     
@@ -112,7 +116,7 @@
     
     // Check whether the 2 rectangles overlap. Return if they are not overlapping.
     if (fA.x >= 0 || fA.y >= 0 || fB.x >= 0 || fB.y >= 0) {
-        DLog(@"No collision %@ and %@. Radius test: %@ %@.", a, b, fA, fB);
+        DLog(@"No collision %@ and %@. Average incident edge test: %@ %@.", a, b, fA, fB);
         return NO;
     }
     
@@ -203,7 +207,7 @@
         h = hA;
         
     } else {
-        @throw [NSException exceptionWithName: NSInternalInconsistencyException reason: @"Impossible floating point error" userInfo: nil];
+        @throw [NSException exceptionWithName: NSInternalInconsistencyException reason: @"Serious error happened, probably due to NaN value" userInfo: nil];
     }
     
     // Find incident edge - second half
@@ -234,7 +238,7 @@
     if (dist1 >= 0 && dist2 >= 0) {
         // The 2 rectangles do not collide
         DLog(@"No collision %@ and %@. First clipping.", a , b);
-        return NO;
+        return YES;
     } else if (dist1 < 0 && dist2 < 0) {
         v1_ = v1;
         v2_ = v2;
@@ -246,7 +250,7 @@
         v2_ = [v1 add: [[v2 subtract: v1] multiply: dist1 / (dist1 - dist2)]];
     } else {
         DLog(@"Dist: %f %f",  dist1, dist2);
-        @throw [NSException exceptionWithName: NSInternalInconsistencyException reason: @"Impossible floating point error" userInfo: nil];
+        @throw [NSException exceptionWithName: NSInternalInconsistencyException reason: @"Serious error happened, probably due to NaN value" userInfo: nil];
     }
     
     // Second clipping
@@ -257,7 +261,7 @@
     if (dist1 >= 0 && dist2 >= 0) {
         // The 2 rectangles do not collide
         DLog(@"No collision %@ and %@. Second clipping.", a , b);
-        return NO;
+        return YES;
     } else if (dist1 < 0 && dist2 < 0) {
         v1__ = v1_;
         v2__ = v2_;
@@ -272,7 +276,7 @@
     Vector2D *endPointDiff = [v1__ subtract: v2__];
     if (float_equals(endPointDiff.x, 0) && float_equals(endPointDiff.y, 0)) {
         DLog(@"Contact points are coincidental between %@ and %@", a, b);
-        return NO;
+        return YES;
     }
     
     // Find contact points
