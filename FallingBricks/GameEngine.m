@@ -10,17 +10,13 @@
 #import "GameObject.h"
 #import "Matrix2D.h"
 
-double reciprocal(double x) {
-    return isnan(x) ? x : isinf(x) ? 0 : 1. / x;
-}
-
 @implementation GameEngine
 
 @synthesize timeStep;
 @synthesize gravity = gravity_;
 
-#define GravityXAxisMultiplier 1000.
-#define GravityYAxisMultiplier -1000.
+#define GravityXAxisMultiplier 500.
+#define GravityYAxisMultiplier -500.
 
 -(void)simulateGravity: (NSTimer*) timer {
     // There is a bug with the orientation on the iOS simulator (at least for iPad)
@@ -295,65 +291,63 @@ double reciprocal(double x) {
     DLog(@"Contact points between %@ and %@: (%f, %f) (%f, %f)", a, b, c[0].x, c[0].y, c[1].y, c[1].y);
     
     // Apply impulses at contact points
-    for (int l = 0; l < 1; l++) {
+    for (int l = 0; l < 8; l++) {
         // One iteration
         for (int i = 0; i < 2; i++) {
-            Vector2D *rA, *rB;
-            rA = [c[i] subtract: pA];
-            rB = [c[i] subtract: pB];
-            
-            Vector2D *uA, *uB;
-            // uA = [a.velocity add: [rA multiply: a.angularVelocity]]; // PS BUG?
-            // uB = [b.velocity add: [rB multiply: b.angularVelocity]]; // PS BUG?
-            
-            uA = [a.velocity subtract: [rA multiply: a.angularVelocity]];
-            uB = [b.velocity subtract: [rB multiply: b.angularVelocity]];
-            
-            
-            Vector2D *u;
-            u = [uB subtract: uA];
-            
-            CGFloat ut, un;
-            un = [u dot: n];
-            ut = [u dot: t];
-            
-            CGFloat mn, mt;
-            mn = reciprocal(a.mass) + reciprocal(b.mass) + 
-            ([rA dot: rA] - ([rA dot: n] * [rA dot: n])) / a.inertia + 
-            ([rB dot: rB] - ([rB dot: n] * [rB dot: n])) / b.inertia;
-            mn = reciprocal(mn);
-            
-            mt = reciprocal(a.mass) + reciprocal(b.mass) + 
-            ([rA dot: rA] - ([rA dot: t] * [rA dot: t])) / a.inertia + 
-            ([rB dot: rB] - ([rB dot: t] * [rB dot: t])) / b.inertia;
-            mt = reciprocal(mt);
-            
-            Vector2D *Pn;
-            CGFloat dPt;
-            
-            CGFloat bias = fabs(0.05 / timeStep * (0.01 + s[i]));
-            
-            CGFloat e = sqrt(a.restitution * b.restitution);
-            // Pn = [n multiply: mn * (1 + e) * un];
-            Pn = [n multiply: mn * ((1 + e) * un - bias)];
-            // Pn = [n multiply: MIN(0, mn * ((1 + e) * un - bias))];
-            dPt = mt * ut;
-            
-            CGFloat Ptmax = [Pn dot: Pn] * a.friction * b.friction;
-            dPt = MAX(-Ptmax, MIN(dPt, Ptmax));
-            
-            Vector2D *Pt = [t multiply: dPt];
-            
-            Vector2D *P = [Pn add: Pt];
-            
-            if ([a canMove]) {
-                a.velocity = [a.velocity add: [P multiply: 1 / a.mass]];
-                a.angularVelocity = a.angularVelocity + [rA cross: P] / a.inertia;
-            }
-            
-            if ([b canMove]) {
-                b.velocity = [b.velocity subtract: [P multiply: 1 / b.mass]];
-                b.angularVelocity = b.angularVelocity - [rB cross: P] / b.inertia; 
+            // if (s[i] < 0) {
+            {
+                Vector2D *rA, *rB;
+                rA = [c[i] subtract: pA];
+                rB = [c[i] subtract: pB];
+                
+                Vector2D *uA, *uB;
+                uA = [a.velocity add: [rA crossZ: -a.angularVelocity]];
+                uB = [b.velocity add: [rB crossZ: -b.angularVelocity]];
+                
+                Vector2D *u;
+                u = [uB subtract: uA];
+                
+                CGFloat ut, un;
+                un = [u dot: n];
+                ut = [u dot: t];
+                
+                CGFloat mn, mt;
+                mn = 1. / a.mass + 1. / b.mass + 
+                ([rA dot: rA] - ([rA dot: n] * [rA dot: n])) / a.inertia + 
+                ([rB dot: rB] - ([rB dot: n] * [rB dot: n])) / b.inertia;
+                mn = 1. / mn;
+                
+                mt = 1. / a.mass + 1. / b.mass + 
+                ([rA dot: rA] - ([rA dot: t] * [rA dot: t])) / a.inertia + 
+                ([rB dot: rB] - ([rB dot: t] * [rB dot: t])) / b.inertia;
+                mt = 1. / mt;
+                
+                Vector2D *Pn;
+                
+                CGFloat bias = fabs(0.05 / timeStep * (0.01 + s[i]));
+                
+                CGFloat e = sqrt(a.restitution * b.restitution);
+                // Pn = [n multiply: mn * (1 + e) * un];
+                // Pn = [n multiply: mn * ((1 + e) * un - bias)];
+                Pn = [n multiply: MIN(0, mn * ((1 + e) * un - bias))];
+                CGFloat dPt = mt * ut;
+                
+                CGFloat Ptmax = [Pn dot: Pn] * a.friction * b.friction;
+                dPt = MAX(-Ptmax, MIN(dPt, Ptmax));
+                
+                Vector2D *Pt = [t multiply: dPt];
+                
+                Vector2D *P = [Pn add: Pt];
+                
+                if ([a canMove]) {
+                    a.velocity = [a.velocity add: [P multiply: 1. / a.mass]];
+                    a.angularVelocity = a.angularVelocity + [rA cross: P] / a.inertia;
+                }
+                
+                if ([b canMove]) {
+                    b.velocity = [b.velocity subtract: [P multiply: 1. / b.mass]];
+                    b.angularVelocity = b.angularVelocity - [rB cross: P] / b.inertia; 
+                }
             }
         }
     }

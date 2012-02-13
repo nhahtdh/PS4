@@ -45,9 +45,9 @@
     o = [[GameObject alloc] initWithSizes: CGSizeMake(200, 100)
                                    center: CGPointMake(500, 500) 
                                     angle: degree_to_radian(0)
-                                     mass: 50
-                                 friction: 0.5
-                              restitution: 0.2
+                                     mass: 5
+                                 friction: 0.
+                              restitution: 0.
                                   canMove: YES];
     o.name = @"Gray object";
     [o.view setBackgroundColor: [UIColor grayColor]];
@@ -57,10 +57,10 @@
     
     o = [[GameObject alloc] initWithSizes: CGSizeMake(100, 100)
                                    center: CGPointMake(100, 100) 
-                                    angle: (60 * M_PI / 180) // degree_to_radian(60)
-                                     mass: 50
-                                 friction: 0.5
-                              restitution: 0.2
+                                    angle: degree_to_radian(60)
+                                     mass: 2
+                                 friction: 0.
+                              restitution: 0.
                                   canMove: YES];
     o.name = @"Cyan object";
     [o.view setBackgroundColor: [UIColor cyanColor]];
