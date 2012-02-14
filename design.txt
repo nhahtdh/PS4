@@ -1,14 +1,28 @@
-Problem 2:
-GameEngine is owned by the GameViewController. Every 1/60 second, GameViewController will call GameEngine to simulate physical phenomenon for the GameObjects.
-The Controller and Model for GameObject are merged into the same class. All the physical properties of a GameObject can be found in GameObject class.
-GameObject implements protocol defined by the GameEngine so that GameEngine can read the physical data from the GameObject. This is not done in the implementation, since the protocol is highly dependent on the GameEngine, and the GameEngine is likely to be replaced in PS5.
+Problem 1:
+a)
+The data model only contains information about the data and how they are related, so there is no mention of GameEngine (which contains the logic of collision).
 
+There are 5 types of GameObjects: GameWolf, GamePig, GameBlock, GameObstruction (walls and other immovable objects), GameBlow (wolf's blow).
+
+The GameObject has physical attributes such as position, rotation, velocity, etc. which are stored in the Physical Model.
+
+The GameWorld can contains as many GameObjects as possible, but at any time exactly 1 GameWolf.
+
+b)
+In the diagram shown, the views are omitted. There is the main view in GameViewController, which contains 2 subviews of gameArea and palette. The gameArea contains subviews: 2 background images, and the views of each of the GameObjects. The palette contains the subviews: the views of the available GameObjects (in level maker mode only).
+
+GameEngine is owned by the GameViewController. Every 1/60 second, GameViewController will call GameEngine to simulate physical phenomenon for the GameObjects. It will pass its collection of GameObject to GameEngine for processing.
+
+The Controller and Model for GameObject are merged into the same class. All the physical properties of a GameObject can be found in GameObject class.
+
+GameObject implements protocol <PhysicalModel> defined by the GameEngine so that GameEngine can read the physical data from the GameObject. This is not done in the implementation, since the protocol is highly dependent on the GameEngine, and the GameEngine is likely to be replaced in PS5.
 
 Problem 3:
 
 To test effectively, ideally, for each (or a group of several) test case(s), there is a configuration of objects in the box for those specific test cases to isolate each of the effects. However, the implementation doesn't provide any mechanism of choosing configuration, so testing may require modification on the code to set up the appropriate environment.
 
 Black-box testing (but with the knowledge of accelerometer being used to simulate gravity)
+
 - Test gravity:
   + Hold the device in some orientation - the objects should fall to the bottom of the screen (relative to the orientation).
     . The object should react quickly to the change in gravity if it is stationary.
@@ -17,20 +31,25 @@ Black-box testing (but with the knowledge of accelerometer being used to simulat
   + Group the objects together at one end of the screen and rotate the device by 180 degree. The object should not stick at the top of the screen. The objects should also come to rest or only move slightly on the bottom of the screen under the effect of gravity.
 
 - Test collision between 2 objects:
-  + Scaled up objects should collide as a non-scaled up object with the same apparent size.
+  + The object should not have collision behaviour when it visually has not collided with other objects.
+    . Scaled up objects should collide as a non-scaled up object with the same apparent size.
+    . Rotated object should collide in its rotated form, not at the initial degree of rotation.
+    . The model and the view should move together synchronously in (not within) every time step. No strange effect like colliding with invisible object (the view and model are not synchronized).
   + Wall and object - the wall should not move at all, no matter how heavy the objects are (finite mass), and the object should bounce off the wall.
     . Slow collision - tilt the device slightly to let the object collide with the wall.
     . Fast collision - aggregate the device on one of the shorter edge of the device and rotate 180 degree. The object should not obviously overlap with the wall or escape from the wall.
-    . Resting - object should be able to rest on the wall (somewhere in the middle), not only at the corners.
-    . Sliding - object should be able to slide on the wall when the device is tilted.
+    . Resting - object should be able to rest on the wall (somewhere in the middle), not only at the corners. No strange effect such as the object always need to slide to the corner before it is stopped.
+    . Sliding - object should be able to slide on the wall when the device is tilted. The angle of the tilting depends on the friction coefficient (the higher the coefficient, the less tilting angle needed).
   + Object and object
     . The object should collide with each other without visible protruding, except for the case of thin object where deep protruding may be observed.
-
+    . Resting - same as between wall and object
+    . Sliding - same as between wall and object
 - Test collision between multiple objects:
   + Tilt the device around and try to aggregate objects in the corner - the objects should eventually be able to aggregate in the corner and stay there without bouncing around or go through each other under gravity.
   + Fast collision and pile up: the fastest way to achieve this is by rotating the device to landscape position and tilt it towards left side, then rotate 90 degree for a free fall. The objects will move very fast and collide with the wall then pile up on each other. The amount of visible overlapping among the objects, and between the objects and the wall should not be too obviously visible. The objects should not escape the wall and disappear under the large amount of force either.
 
 Glass-box testing
+
 - Test collision between multiple objects:
   + Choose/set objects and walls with 0 friction and 0 restitution. The object should drop to the bottom of the screen with little bouncing around before coming to a rest. (This can also be used to test whether friction and elasticity work).
 
@@ -42,3 +61,15 @@ Glass-box testing
 
 - Test elasticity works:
   + Choose/set an object with 0 restitution and another object with 1 restitution, with same angle, same distance from bottom of the screen and without any obstacle on the way; let them free fall. The object with 1 restitution will bounce around more before coming to a stop, while the object with 0 restitution will come to a rest faster.
+
+Bonus Problem
+
+a) For all problems, around 20+ hours (already subtract the non-productive time). The significant reduction in time is attributed to starting late and learning from other's mistakes and troubles. (But I must admit I learn less from doing so, since I didn't debug as much as in PS3).
+
+b) This is probably around the least time spent on a PS (but it still takes up quite a lot of time compared to other modules).
+
+c) I don't think there is a need to write the game engine ourselves. Either we need it and we wrote a working one long time ago for a game project, or we just take one from the Internet and use it. I don't (actually I didn't try to) understand the appendix to writing the game engine, so I didn't learn much in the end. I don't mean to say "I am not grateful for the person who wrote the appendix", or "the appendix is unnecessary", but I want to say is "is there any good in building a half-ass game engine and by translating from words to code?".
+
+I admit that I learn a bit about NSTimer and UIAccelerometer (or CMMotionManager), but it is not that much compared to the learning curve in PS3.
+
+A note: forces and torques are not updated to the game object. Forces and torques are mentioned in step 1 of the appendix, but they are never updated and are never mentioned again elsewhere.
