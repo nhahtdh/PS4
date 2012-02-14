@@ -47,8 +47,8 @@
                                     angle: degree_to_radian(0)
                                     scale: 1.0
                                      mass: 5
-                                 friction: 0.
-                              restitution: 1.
+                                 friction: 0.5
+                              restitution: 0.8
                                   canMove: YES];
     o.name = @"Gray object";
     [o.view setBackgroundColor: [UIColor grayColor]];
@@ -82,6 +82,46 @@
     [o.view setBackgroundColor: [UIColor greenColor]];
     [self.view addSubview: o.view];
     [gameObjectsInGameArea addObject: o];
+    
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(50, 50) 
+                                   center: CGPointMake(400, 300)
+                                    angle: degree_to_radian(-20) 
+                                    scale: 1
+                                     mass: 1 
+                                 friction: 0.2 
+                              restitution: 0.7
+                                  canMove: YES];
+    o.name = @"Yellow object";
+    [o.view setBackgroundColor: [UIColor yellowColor]];
+    [self.view addSubview: o.view];
+    [gameObjectsInGameArea addObject: o];
+    
+    
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(250, 40) 
+                                   center: CGPointMake(550, 200)
+                                    angle: degree_to_radian(80) 
+                                    scale: 1
+                                     mass: 3
+                                 friction: 1 
+                              restitution: 0 
+                                  canMove: YES];
+    o.name = @"Purple object";
+    [o.view setBackgroundColor: [UIColor purpleColor]];
+    [self.view addSubview: o.view];
+    [gameObjectsInGameArea addObject: o];
+    
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(150, 90) 
+                                   center: CGPointMake(100, 800)
+                                    angle: degree_to_radian(80) 
+                                    scale: 1
+                                     mass: 0.5
+                                 friction: 0 
+                              restitution: 0.8 
+                                  canMove: YES];
+    o.name = @"Orange object";
+    [o.view setBackgroundColor: [UIColor orangeColor]];
+    [self.view addSubview: o.view];
+    [gameObjectsInGameArea addObject: o];
 }
 
 - (void)setUpWalls {
@@ -92,8 +132,8 @@
                                     angle: 0 
                                     scale: 1.0
                                      mass: INFINITY
-                                 friction: 0.8
-                              restitution: 0.3
+                                 friction: 0.7
+                              restitution: 0.2
                                   canMove: NO];
     o.name = @"Left wall";
     [o.view setBackgroundColor: [UIColor redColor]];
@@ -105,8 +145,8 @@
                                     angle: 0 
                                     scale: 1.0
                                      mass: INFINITY
-                                 friction: 0.8
-                              restitution: 0.3
+                                 friction: 0.7
+                              restitution: 0.2
                                   canMove: NO];
     o.name = @"Right wall";
     [o.view setBackgroundColor: [UIColor redColor]];
@@ -118,8 +158,8 @@
                                     angle: 0 
                                     scale: 1.0
                                      mass: INFINITY
-                                 friction: 0.8
-                              restitution: 0.3
+                                 friction: 0.7
+                              restitution: 0.2
                                   canMove: NO];
     o.name = @"Top wall";
     [o.view setBackgroundColor: [UIColor redColor]];
@@ -131,8 +171,8 @@
                                     angle: 0 
                                     scale: 1.0
                                      mass: INFINITY
-                                 friction: 0.8
-                              restitution: 0.3
+                                 friction: 0.7
+                              restitution: 0.2
                                   canMove: NO];
     o.name = @"Bottom wall";
     [o.view setBackgroundColor: [UIColor redColor]];
@@ -150,8 +190,8 @@
     [self setUpWalls];
     [self setUpGameObject];
     
-    // Simulate user pressing start button
     engine_ = [[GameEngine alloc] init];
+    // Simulate user pressing start button
 	[self startButtonPressed: self];
 }
 
