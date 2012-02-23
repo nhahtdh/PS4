@@ -127,8 +127,8 @@
 - (void)setUpWalls {
     GameObject *o;
     
-    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1200)
-                                   center: CGPointMake(-495, 1004 / 2)
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(500, 1200)
+                                   center: CGPointMake(-245, 1004 / 2)
                                     angle: 0 
                                     scale: 1.0
                                      mass: INFINITY
@@ -140,8 +140,8 @@
     [self.view addSubview: o.view];
     [gameObjectsInGameArea addObject: o];
     
-    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1200)
-                                   center: CGPointMake(767 + 495, 1004 / 2)
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(500, 1200)
+                                   center: CGPointMake(767 + 245, 1004 / 2)
                                     angle: 0 
                                     scale: 1.0
                                      mass: INFINITY
@@ -153,8 +153,8 @@
     [self.view addSubview: o.view];
     [gameObjectsInGameArea addObject: o];
     
-    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1000)
-                                   center: CGPointMake(768 / 2, -495)
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 500)
+                                   center: CGPointMake(768 / 2, -245)
                                     angle: 0 
                                     scale: 1.0
                                      mass: INFINITY
@@ -166,8 +166,8 @@
     [self.view addSubview: o.view];
     [gameObjectsInGameArea addObject: o];
     
-    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 1000)
-                                   center: CGPointMake(768 / 2, 1003 + 495)
+    o = [[GameObject alloc] initWithSizes: CGSizeMake(1000, 500)
+                                   center: CGPointMake(768 / 2, 1003 + 245)
                                     angle: 0 
                                     scale: 1.0
                                      mass: INFINITY
